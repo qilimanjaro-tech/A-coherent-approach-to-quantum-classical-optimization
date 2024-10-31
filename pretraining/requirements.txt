@@ -1,0 +1,9 @@
+qiskit
+qiskit-aer
+qiskit-ibm-runtime
+numpy==1.26
+scipy
+cma
+matplotlib
+ncon
+jupyter

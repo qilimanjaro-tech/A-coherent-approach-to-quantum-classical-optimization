@@ -1,0 +1,9 @@
+{
+  "expected_value_gibbs_state": -36.35487736344542,
+  "expected_value_psgibbs_state": -36.024216662721706,
+  "energy_qaoa_gibbs_state": -39.92094236905055,
+  "energy_qaoa_psgibbs_state": -36.02556679322641,
+  "energy_value_exact": -42,
+  "entropy_gibbs_state": 10.033250389364744,
+  "entropy_psgibbs_state": 8.35792117790547
+}
