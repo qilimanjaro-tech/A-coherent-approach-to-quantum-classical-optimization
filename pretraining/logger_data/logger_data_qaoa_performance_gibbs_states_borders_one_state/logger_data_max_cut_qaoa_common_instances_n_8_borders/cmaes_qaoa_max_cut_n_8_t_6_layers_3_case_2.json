@@ -1,0 +1,7 @@
+{
+  "expected_value_gibbs_state": -9.67604353337901,
+  "expected_value_one_state": -10.0,
+  "energy_qaoa_gibbs_state": -11.926161017223457,
+  "energy_qaoa_one_state": -9.999999834787735,
+  "energy_value_exact": -13
+}

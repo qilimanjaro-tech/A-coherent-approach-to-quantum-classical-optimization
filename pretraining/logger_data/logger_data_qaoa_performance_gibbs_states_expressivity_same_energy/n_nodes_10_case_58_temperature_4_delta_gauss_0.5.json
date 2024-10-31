@@ -1,0 +1,8 @@
+{
+  "expected_value_gibbs_state": -11.924864945096951,
+  "expected_value_psgibbs_state": -11.963592281440668,
+  "entropy_gibbs_state": 6.487858634161756,
+  "entropy_psgibbs_state": 5.203768122351506,
+  "area_gibbs_state": 0.002015545428469029,
+  "area_psgibbs_state": 0.0003151671338389816
+}

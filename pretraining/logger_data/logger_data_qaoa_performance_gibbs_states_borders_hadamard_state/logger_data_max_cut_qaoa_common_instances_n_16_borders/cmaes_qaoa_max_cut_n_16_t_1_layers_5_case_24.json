@@ -1,0 +1,7 @@
+{
+  "expected_value_gibbs_state": -52.61410890269701,
+  "expected_value_hadamard_state": -43.00004299969516,
+  "energy_qaoa_gibbs_state": -52.897083477683836,
+  "energy_qaoa_hadamard_state": -45.24486320477905,
+  "energy_value_exact": -54.0
+}
