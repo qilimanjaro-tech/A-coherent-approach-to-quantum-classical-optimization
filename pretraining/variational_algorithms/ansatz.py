@@ -53,6 +53,58 @@ class Ansatz:
             self.circuit.cx(qubits[0], qubits[1])
         else:
             raise NotImplementedError()
+        
+class CustomAnsatz(Ansatz):
+    def __init__(
+        self,
+        circuit: QuantumCircuit,
+        init_circuit: QuantumCircuit=None
+    ):
+        super(CustomAnsatz, self).__init__(circuit.n_qubits, 1)
+
+        if init_circuit:
+            self.prep_circuit = deepcopy(init_circuit)
+            self.prep_circuit.gates = [gate for gate in self.prep_circuit.gates if not isinstance(gate, M)]
+        else:
+            self.prep_circuit = None
+        
+        self.prep_params = getattr(init_circuit, "parameters", None)
+
+        self.init_circuit = circuit
+        self.init_circuit.gates = [gate for gate in self.init_circuit.gates if not isinstance(gate, M)]
+        self.init_params = circuit.parameters
+        self.total_params = circuit.n_params
+
+    @property
+    def number_of_parameters(self) -> int:
+        return self.total_params
+
+    def construct_circuit(self, params: List[float], density_matrix: bool = True, ini_state: Optional[list] = None):
+        
+        if self.prep_circuit:
+            self.circuit = deepcopy(self.prep_circuit)
+            self.circuit.append(deepcopy(self.init_circuit))
+            parameters = list(deepcopy(self.prep_params)) + list(deepcopy(params))
+        else:
+            self.circuit = deepcopy(self.init_circuit)
+            parameters = list(deepcopy(params))  
+        
+        if ini_state:
+            ini_state_circuit = self.create_initial_state(ini_state)
+        else:
+            ini_state_circuit = self.create_initial_state([0] * self.n_qubits)
+        if density_matrix:
+            ini_state_circuit = np.matmul(ini_state_circuit.reshape(-1, 1), ini_state_circuit.reshape(1, -1))
+
+        #TODO: chek the method set_initial_state
+        #self.circuit.set_initial_state(ini_state_circuit)
+        
+        self.circuit.update_parameters(parameters)
+
+        self.circuit.append([M(i) for i in range(self.n_qubits)])
+        self.circuit.assemble()
+        
+        return self.circuit
 
 
 class HardwareEfficientAnsatz(Ansatz):

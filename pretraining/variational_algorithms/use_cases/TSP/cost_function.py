@@ -1,7 +1,7 @@
 from typing import List
 from variational_algorithms.use_cases.TSP.instances import TSP_Instance
 from variational_algorithms.use_cases.cost_function import UseCaseCostFunction
-from variational_algorithms.symbols.hamiltonians import Z
+from variational_algorithms.hamiltonians import Z
 
 
 class TSP_CostFunction(UseCaseCostFunction):

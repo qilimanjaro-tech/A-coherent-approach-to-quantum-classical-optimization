@@ -1659,6 +1659,8 @@ class Pretraining:
         
         final_mps = tevo.run(n_steps = n_steps, dt = dt, order = order, metrics = metrics)
         
+        self.final_mps = final_mps
+        
         gates_optimization, fidelity = MPSPQC(mps_list=final_mps.tensors).optimization_decomposition(
             sweeps=self.sweeps_mps, layers=self.init_layers_mps, f=self.fidelity_mps
         )
