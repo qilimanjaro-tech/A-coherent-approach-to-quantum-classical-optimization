@@ -6,9 +6,6 @@ import numpy as np
 from qiskit.circuit import QuantumCircuit
 
 import variational_algorithms.hamiltonians as sym
-
-# from variational_algorithms.gates import *
-# from variational_algorithms.quantum_circuit import QuantumCircuit
 from variational_algorithms.hamiltonians import Hamiltonian
 
 
