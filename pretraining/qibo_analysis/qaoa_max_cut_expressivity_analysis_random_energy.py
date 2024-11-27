@@ -9,7 +9,7 @@ from sklearn.decomposition import PCA
 import alphashape
 
 
-def area_envolvente_concava(puntos, alpha):
+def concave_wraparound_area(puntos, alpha):
 
     alpha_shape = alphashape.alphashape(puntos, alpha)
     return alpha_shape.area, alpha_shape
@@ -79,7 +79,7 @@ for j in range(100):
         componentsDf = pd.DataFrame(data = pca_point_probabilities, columns = ['PC1', 'PC2'])
         gamma=100
         rank = (svalues>1e-2).sum()
-        area = area_envolvente_concava(componentsDf[['PC1','PC2']].to_numpy(), gamma)[0]
+        area = concave_wraparound_area(componentsDf[['PC1','PC2']].to_numpy(), gamma)[0]
         areas.append([j, i, entropy,area,rank])
         print(j,i, entropy, area, rank)
 

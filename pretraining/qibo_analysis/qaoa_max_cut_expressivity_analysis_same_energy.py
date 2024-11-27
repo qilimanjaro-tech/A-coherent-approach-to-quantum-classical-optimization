@@ -19,7 +19,7 @@ from qaoa_utils import (
 
 
 
-def area_envolvente_concava(puntos, alpha):
+def concave_wraparound_area(puntos, alpha):
 
     alpha_shape = alphashape.alphashape(puntos, alpha)
     
@@ -89,7 +89,7 @@ for i in range(test):
     pca_gibbs = PCA(n_components = 2)
     pca_point_probabilities_gibbs = pca_gibbs.fit_transform(np.array(probs_gibbs))
     componentsDf_gibbs = pd.DataFrame(data = pca_point_probabilities_gibbs, columns = ['PC1', 'PC2'])
-    area_gibbs = area_envolvente_concava(componentsDf_gibbs[['PC1','PC2']].to_numpy(), alpha = 100)[0]
+    area_gibbs = concave_wraparound_area(componentsDf_gibbs[['PC1','PC2']].to_numpy(), alpha = 100)[0]
 
     while iterations < test_iter:
 
@@ -120,7 +120,7 @@ for i in range(test):
         pca = PCA(n_components = 2)
         pca_point_probabilities_ps_gibbs = pca.fit_transform(np.array(probs_ps_gibss))
         componentsDf_ps_gibbs = pd.DataFrame(data = pca_point_probabilities_ps_gibbs, columns = ['PC1', 'PC2'])
-        area_ps_gibbs = area_envolvente_concava(componentsDf_ps_gibbs[['PC1','PC2']].to_numpy(), alpha = 100)[0]
+        area_ps_gibbs = concave_wraparound_area(componentsDf_ps_gibbs[['PC1','PC2']].to_numpy(), alpha = 100)[0]
 
         path_data = (f"logger_data/logger_data_qaoa_performance_gibbs_states_expressivity_same_energy/n_nodes_{n_nodes}_case_{i}_temperature_{temperature}_delta_gauss_{round(delta, 3)}.json")
 

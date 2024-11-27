@@ -4,9 +4,13 @@ This repository contains the code used to produce the results of the publication
 
 ## Results and data verification
 
-- The data used to create the figures in the article is located in the `pretraining/data` folder. The code used to generate the figures can be found in the file `plots_from_data.ipynb`.
+- The data used to create the figures in the article is located in the `pretraining/logger_data` folder.
 
-- Within the `logger_data` folder, there are several subfolders, each containing the data necessary to reproduce the results presented in the article.
+- Within the `logger_data` folder, there are several subfolders, each containing the data necessary to reproduce the results presented in the article. See the associated readme for more information.
+
+- The code used to generate the figures can be found in the file `plots_from_data.ipynb`.
+
+- In the file `classical_quantum_optimisation.ipynb` we present functional examples of hybrid optimization schemes. We also added two files presenting the operation of the DMRG algorithm and the WI,II MPO called `dmrg.ipynb` and `mpo_time_evolution.ipynb` respectively.
 
 
 ## Code 
