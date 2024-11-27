@@ -6,11 +6,18 @@ from itertools import chain, combinations
 
 from typing import List, Iterable, Set, Optional, Tuple
 
-
 from qibo.symbols import Z, X
 from qibo import hamiltonians
 
 def _powerset(iterable: Iterable[int]) -> List[Set[int]]:
+    """_summary_
+
+    Args:
+        iterable (Iterable[int]): _description_
+
+    Returns:
+        List[Set[int]]: _description_
+    """
     s = list(iterable)
     return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
 
@@ -275,6 +282,15 @@ def create_local_state(solutions_dict: dict, reference_energy: float, left: bool
     return one_state
 
 def create_random_state(solutions_dict: dict, max_energy: float):
+    """_summary_
+
+    Args:
+        solutions_dict (dict): _description_
+        max_energy (float): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     dict_state_low = dict([(state, energy) for state, energy in solutions_dict.items() if energy <= max_energy])
     
@@ -357,6 +373,14 @@ def exprectum_hamiltonian(grahp) -> dict:
     return states
 
 def exprectum_hamiltonian_brute_force(grahp):
+    """_summary_
+
+    Args:
+        grahp (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     adjacency_matrix = nx.adjacency_matrix(grahp)
     adjacency_matrix_np = adjacency_matrix.toarray()
@@ -408,13 +432,20 @@ def sample_state(state: np.array) -> dict:
     return probabilities
 
 def create_random_state_no_energy(solutions_dict: dict):
+    """_summary_
+
+    Args:
+        solutions_dict (dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     psi_psstate = 0
     psi_state_norm = [np.nan]
     
     while np.isnan(psi_state_norm[0]) != False:
     
-        #list_zeros = [0.0]* random.choice([1, 5, 10, 20, 25, 35, len(dict_state_low)])
         prob_accept_element = np.random.uniform(0.01,1)
         n_items = len(solutions_dict.items())
 
