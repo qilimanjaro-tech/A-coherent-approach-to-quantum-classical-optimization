@@ -20,6 +20,30 @@ The code used is divided into two main modules.
 
 ## Installation
 
+To correctly install the dependencies, please create an environment with python = 3.10.
+
+
+```ruby
+conda create -n pretraining_env python=3.10
+conda activate pretraining_env
+```
+
+And install the corresponding packages
+
 ```ruby
 pip install requirements.txt
+```
+
+## Citation
+
+```ruby
+@misc{cáliz2024coherentapproachquantumclassicaloptimization,
+      title={A coherent approach to quantum-classical optimization}, 
+      author={Andrés N. Cáliz and Jordi Riu and Josep Bosch and Pau Torrente and Jose Miralles and Arnau Riera},
+      year={2024},
+      eprint={2409.13924},
+      archivePrefix={arXiv},
+      primaryClass={quant-ph},
+      url={https://arxiv.org/abs/2409.13924}, 
+}
 ```
