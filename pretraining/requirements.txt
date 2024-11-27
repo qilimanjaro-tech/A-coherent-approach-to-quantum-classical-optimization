@@ -7,3 +7,4 @@ cma
 matplotlib
 ncon
 jupyter
+sklearn
