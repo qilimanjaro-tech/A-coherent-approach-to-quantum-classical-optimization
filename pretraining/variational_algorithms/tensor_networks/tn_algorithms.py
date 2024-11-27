@@ -1591,8 +1591,6 @@ class Pretraining:
         if self.seed is not None:
             np.random.seed(self.seed)
 
-        if self.n_qubits % 2 == 1:
-            raise NotImplementedError("The number of qubits must be even")
 
         ham_mpo = MPO(n_sites=self.n_qubits, phys_d=2, chi=self.chi_mpo, open_bounds=False)
         ham_mpo.from_ham(self.ham)
@@ -1647,9 +1645,6 @@ class Pretraining:
         
         if self.seed is not None:
             np.random.seed(self.seed)
-
-        if self.n_qubits % 2 == 1:
-            raise NotImplementedError("The number of qubits must be even")
 
         tevo = TimeEvolution(n_sites = self.n_qubits, 
                       ham = self.ham, 

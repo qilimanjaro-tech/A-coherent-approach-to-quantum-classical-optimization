@@ -6,7 +6,7 @@ This repository contains the code used to produce the results of the publication
 
 - The data used to create the figures in the article is located in the `pretraining/data` folder. The code used to generate the figures can be found in the file `plots_from_data.ipynb`.
 
-- Within the `data` folder, there are several subfolders, each containing the data necessary to reproduce the results presented in the article.
+- Within the `logger_data` folder, there are several subfolders, each containing the data necessary to reproduce the results presented in the article.
 
 
 ## Code 
