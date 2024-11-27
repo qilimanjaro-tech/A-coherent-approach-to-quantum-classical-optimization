@@ -20,5 +20,6 @@ The code used is divided into two main modules.
 
 ## Installation
 
-##
-<tab><tab> pip install requirements.txt
+```
+pip install requirements.txt
+```
