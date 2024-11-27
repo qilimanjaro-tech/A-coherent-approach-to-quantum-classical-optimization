@@ -20,6 +20,6 @@ The code used is divided into two main modules.
 
 ## Installation
 
-```
+```ruby
 pip install requirements.txt
 ```
