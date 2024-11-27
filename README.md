@@ -20,18 +20,5 @@ The code used is divided into two main modules.
 
 ## Installation
 
-<div>
-  <pre id="codigo">
-git clone https://github.com/usuario/repositorio.git
-  </pre>
-  <button onclick="copiarTexto()">Copiar</button>
-</div>
-
-<script>
-function copiarTexto() {
-  const codigo = document.getElementById("codigo").innerText;
-  navigator.clipboard.writeText(codigo).then(() => {
-    alert("¡Texto copiado al portapapeles!");
-  });
-}
-</script>
+##
+<tab><tab> pip install requirements.txt
