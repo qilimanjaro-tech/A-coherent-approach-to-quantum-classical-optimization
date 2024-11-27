@@ -1,10 +1,10 @@
 qiskit
 qiskit-aer
 qiskit-ibm-runtime
-numpy==1.26
+numpy
 scipy
 cma
 matplotlib
 ncon
 jupyter
-sklearn
+scikit-learn

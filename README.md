@@ -31,7 +31,7 @@ conda activate pretraining_env
 And install the corresponding packages
 
 ```ruby
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Citation
